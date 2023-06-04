@@ -1,0 +1,49 @@
+import React from 'react';
+import { styled, useTheme } from '@mui/system';
+import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar';
+import logoImage from '../../assets/logo.svg';
+import Navigation from "../UI/Navigation";
+import UserNavigation from "../UI/UserNavigation";
+import Logo from "../UI/Logo";
+
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
+}));
+
+const StyledContainer = styled(Container)(({ theme }) => ({
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(1.5),
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%',
+}));
+
+const Toolbar = styled('span')(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+    width: '100%',
+}));
+
+const Header = ({ isLoggedIn }) => {
+    const theme = useTheme();
+    const navigationLinks = [
+        { label: 'Граматика', href: '/grammar' },
+        { label: 'Словниковий запас', href: '/vocabulary' },
+        { label: 'Типові помилки', href: '/errors' },
+        { label: 'Блог', href: '/blog' },
+    ];
+    return (
+        <StyledAppBar position="static">
+            <StyledContainer maxWidth="xl" theme={theme}>
+                <Toolbar>
+                    <Logo height={50} src={logoImage} alt="Logo" />
+                    <Navigation links={navigationLinks} />
+                    <UserNavigation isLoggedIn={isLoggedIn} />
+                </Toolbar>
+            </StyledContainer>
+        </StyledAppBar>
+    );
+};
+
+export default Header;
