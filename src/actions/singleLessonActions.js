@@ -202,6 +202,7 @@ export const startLesson = (lessonId) => {
                 .then((response) => {
                     const {lessonId} = response.data;
                     dispatch(startLessonSuccess(lessonId));
+                    dispatch(getLesson(lessonId))
                 })
                 .catch((error) => {
                     dispatch(startLessonFailure(error));

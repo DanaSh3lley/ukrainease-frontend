@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {Badge, Button, Paper, Step, StepLabel, Stepper, Typography} from '@mui/material';
-import { CheckCircle } from '@mui/icons-material';
+import {Paper, Step, StepLabel, Typography} from '@mui/material';
 import { styled } from '@mui/system';
 import { getLesson } from '../../../actions/singleLessonActions';
 import {useNavigate, useParams} from 'react-router-dom';
@@ -11,7 +10,7 @@ import Grid from "@mui/material/Grid";
 import CustomButton from "../../../component/UI/CustomButton";
 
 const RootContainer = styled(Container)({
-    margin: '0 auto',
+    margin: '60px auto',
     padding: '16px',
     display: 'flex',
     flex: 1
@@ -25,7 +24,7 @@ const StyledBadge = styled('span')(({ theme }) => ({
     borderRadius: theme.spacing(2),
 }));
 
-const StyledPaper = styled(Paper)(({ theme }) => ({
+const StyledPaper = styled(Paper)(() => ({
     padding: '32px',
     elevation: 3,
     display: 'flex',
@@ -95,7 +94,7 @@ const TheoryPage = () => {
                         {lesson?.theory}
                     </TheoryText>
                     <CustomButton sx={{marginTop: '16px'}} variant="contained" color="primary" onClick={handleNextStep}>
-                        Next
+                        Далі
                     </CustomButton>
                 </StyledPaper>
             </Grid>

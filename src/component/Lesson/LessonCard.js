@@ -105,7 +105,7 @@ const LessonCard = ({lesson}) => {
     return (
         <LessonCardWrapper>
             <LessonCardHeader>
-                <img src={`${imagesPath}/lessons/${icon}`} alt="Lesson Icon"/>
+                <img style={{borderRadius: '12px'}} src={`${imagesPath}/lessons/${icon}`} alt="Lesson Icon"/>
                 <Title>{name}</Title>
             </LessonCardHeader>
             <LessonCardBody>

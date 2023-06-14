@@ -80,7 +80,7 @@ const QuestionPage = () => {
                     color="primary"
                     onClick={handleNextStep}
                 >
-                    Next
+                    Далі
                 </CustomButton>
             </Container>
             <CustomStepper activeStep={2}/>
