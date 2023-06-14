@@ -8,6 +8,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {Typography} from "@mui/material";
 import catImage from "../../../assets/hero.svg";
 import coins from "../../../assets/coins.svg";
+import experience from "../../../assets/experience.svg";
 import CustomButton from "../../../component/UI/CustomButton";
 
 const RootContainer = styled(Container)({
@@ -71,7 +72,7 @@ const LessonReward = () => {
                     з  <b>{lessonResult?.totalQuestions}</b> вправ! Це чудовий результат!
                     Ви на один крок блище до досягнення вершини!
                     <Coins>{<img src={coins}/>}+{lessonResult.totalCoinsEarned}</Coins>
-                    <Coins>{<img src={coins}/>}+{lessonResult.totalExperienceEarned}</Coins>
+                    <Coins>{<img src={experience}/>}+{lessonResult.totalExperienceEarned}</Coins>
                     Продовжуйте так само, і не забудьте переглянути наші інші уроки, щоб ще більше розширити свої мовні навички.
                 </Description>
             </Grid>

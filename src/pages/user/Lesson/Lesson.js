@@ -1,7 +1,7 @@
 // Lesson.js
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getLesson} from '../../../actions/SingleLessonActions';
+import {getLesson} from '../../../actions/singleLessonActions';
 import {useNavigate, useParams} from 'react-router-dom';
 import Container from '@mui/material/Container';
 import {styled} from '@mui/system';

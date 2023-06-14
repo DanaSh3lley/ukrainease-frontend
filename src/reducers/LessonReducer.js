@@ -8,7 +8,7 @@ import {
     START_LESSON_FAILURE,
     START_LESSON_REQUEST,
     START_LESSON_SUCCESS
-} from "../actions/LessonActions";
+} from "../actions/lessonActions";
 
 const initialState = {
     catalog: [],

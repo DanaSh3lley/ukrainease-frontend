@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { styled } from '@mui/system';
 import { Box, Card, CardContent, Container, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLeaderboard } from '../../actions/LeaderboardActions';
+import { getLeaderboard } from '../../actions/leaderboardActions';
 import Grid from "@mui/material/Grid";
 import heroSection from "../../assets/hero.svg";
 import { ArrowFatDown, ArrowFatRight, ArrowFatUp } from "phosphor-react";

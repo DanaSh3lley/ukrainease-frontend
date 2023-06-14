@@ -2,7 +2,7 @@ import {
     GET_LEADERBOARD_REQUEST,
     GET_LEADERBOARD_SUCCESS,
     GET_LEADERBOARD_ERROR,
-} from '../actions/LeaderboardActions';
+} from '../actions/leaderboardActions';
 
 const initialState = {
     group: null,

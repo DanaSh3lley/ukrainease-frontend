@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {styled} from '@mui/system';
 import {Alert, Button, Card, Snackbar} from '@mui/material';
 import {ArrowRight} from 'phosphor-react';
-import {startLesson} from '../../actions/SingleLessonActions';
+import {startLesson} from '../../actions/singleLessonActions';
 import {useNavigate} from "react-router-dom";
 import config from "../../config";
 const imagesPath = `${config[process.env.NODE_ENV].images}`

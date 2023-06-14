@@ -1,6 +1,6 @@
 import axios from "axios";
 import config from "../config";
-import {GET_LEADERBOARD_ERROR, GET_LEADERBOARD_REQUEST, GET_LEADERBOARD_SUCCESS} from "./LeaderboardActions";
+import {GET_LEADERBOARD_ERROR, GET_LEADERBOARD_REQUEST, GET_LEADERBOARD_SUCCESS} from "./leaderboardActions";
 
 export const GET_CATALOG_REQUEST = 'GET_CATALOG_REQUEST';
 export const GET_CATALOG_SUCCESS = 'GET_CATALOG_SUCCESS';

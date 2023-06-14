@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
-import {getLesson, submitAnswer, takeLesson} from "../../../actions/SingleLessonActions";
+import {getLesson, submitAnswer, takeLesson} from "../../../actions/singleLessonActions";
 import CustomStepper from "../../../component/UI/CustomStepper";
 import Container from "@mui/material/Container";
 import {styled} from "@mui/system";

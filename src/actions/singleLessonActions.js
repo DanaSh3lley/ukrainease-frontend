@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from '../config';
-import {START_LESSON_FAILURE, START_LESSON_REQUEST, START_LESSON_SUCCESS} from "./LessonActions";
+import {START_LESSON_FAILURE, START_LESSON_REQUEST, START_LESSON_SUCCESS} from "./lessonActions";
 
 export const FETCH_LESSON_REQUEST = 'FETCH_LESSON_REQUEST';
 export const FETCH_LESSON_SUCCESS = 'FETCH_LESSON_SUCCESS';

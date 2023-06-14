@@ -10,8 +10,8 @@ import {
     TAKE_LESSON_FAILURE,
     TAKE_LESSON_REQUEST,
     TAKE_LESSON_SUCCESS,
-} from '../actions/SingleLessonActions';
-import {START_LESSON_FAILURE, START_LESSON_REQUEST, START_LESSON_SUCCESS} from "../actions/LessonActions";
+} from '../actions/singleLessonActions';
+import {START_LESSON_FAILURE, START_LESSON_REQUEST, START_LESSON_SUCCESS} from "../actions/lessonActions";
 
 const initialState = {
     lesson: null,

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCatalog} from "../../actions/LessonActions";
+import {getCatalog} from "../../actions/lessonActions";
 import LessonCard from "../../component/UI/LessonCard";
 import Grid from "@mui/material/Grid";
 import FilterSection from "../../component/UI/FilterSection";

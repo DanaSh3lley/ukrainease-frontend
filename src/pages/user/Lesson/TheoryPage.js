@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Badge, Button, Paper, Step, StepLabel, Stepper, Typography} from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 import { styled } from '@mui/system';
-import { getLesson } from '../../../actions/SingleLessonActions';
+import { getLesson } from '../../../actions/singleLessonActions';
 import {useNavigate, useParams} from 'react-router-dom';
 import CustomStepper from "../../../component/UI/CustomStepper";
 import Container from "@mui/material/Container";

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {finishLesson} from '../../../actions/SingleLessonActions';
+import {finishLesson} from '../../../actions/singleLessonActions';
 import {Dialog, DialogActions, DialogContent, DialogTitle, List, ListItem, Typography} from '@mui/material';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";

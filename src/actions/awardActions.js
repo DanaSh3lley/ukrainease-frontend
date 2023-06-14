@@ -1,6 +1,6 @@
 import axios from "axios";
 import config from "../config";
-import {getCatalogError, getCatalogRequest, getCatalogSuccess} from "./LessonActions";
+import {getCatalogError, getCatalogRequest, getCatalogSuccess} from "./lessonActions";
 
 export const GET_AWARDS_REQUEST = 'GET_AWARDS_REQUEST';
 export const GET_AWARDS_SUCCESS = 'GET_AWARDS_SUCCESS';
