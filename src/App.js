@@ -14,7 +14,7 @@ import Catalog from "./pages/user/Catalog";
 import Lesson from "./pages/user/Lesson/Lesson";
 import Profile from "./pages/user/Profile/Profile";
 import Cookies from "js-cookie";
-import Awards from "./pages/user/Avard/Awards";
+import Awards from "./pages/user/Award/Awards";
 import ResetPage from "./pages/guest/ResetPage";
 import UpdatePage from "./pages/user/Update/UpdatePage";
 import LandingPage from "./pages/guest/LandingPage";

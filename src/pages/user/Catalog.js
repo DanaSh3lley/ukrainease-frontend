@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getCatalog} from "../../actions/lessonActions";
-import LessonCard from "../../component/UI/LessonCard";
+import LessonCard from "../../component/Lesson/LessonCard";
 import Grid from "@mui/material/Grid";
 import FilterSection from "../../component/UI/FilterSection";
 import {Breadcrumbs, FormControl, Link, Pagination, TextField} from "@mui/material";

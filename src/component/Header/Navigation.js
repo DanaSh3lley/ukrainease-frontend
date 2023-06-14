@@ -1,4 +1,4 @@
-import LinkButton from "./LinkButton";
+import LinkButton from "../UI/LinkButton";
 import {styled} from "@mui/system";
 
 const NavigationWrapper = styled('nav')(({ theme }) => ({

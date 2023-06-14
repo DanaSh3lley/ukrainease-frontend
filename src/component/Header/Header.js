@@ -3,8 +3,8 @@ import { styled, useTheme } from '@mui/system';
 import Container from '@mui/material/Container';
 import AppBar from '@mui/material/AppBar';
 import logoImage from '../../assets/logo.svg';
-import Navigation from "../UI/Navigation";
-import UserNavigation from "../UI/UserNavigation";
+import Navigation from "./Navigation";
+import UserNavigation from "./UserNavigation";
 import Logo from "../UI/Logo";
 import {useDispatch, useSelector} from "react-redux";
 

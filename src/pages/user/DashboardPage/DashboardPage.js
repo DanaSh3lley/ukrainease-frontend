@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import catImage from '../../../assets/hero.svg'
 import CustomButton from "../../../component/UI/CustomButton";
 import {getNeedReviewLessons, getRecommendedLessons} from "../../../actions/lessonActions";
-import LessonCard from "../../../component/UI/LessonCard";
+import LessonCard from "../../../component/Lesson/LessonCard";
 import fire from "../../../assets/fire.svg";
 import config from "../../../config";
 
