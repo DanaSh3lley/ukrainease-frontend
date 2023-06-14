@@ -44,7 +44,7 @@ const FieldsContainer = styled('div')(({theme}) => ({
 }));
 
 const UpdatePage = () => {
-    const navigate = useNavigate();
+    useNavigate();
     const dispatch = useDispatch();
     const user = useSelector(state => state.user.user)
     const [name, setName] = useState(user.name);

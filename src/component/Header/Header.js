@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { styled, useTheme } from '@mui/system';
 import Container from '@mui/material/Container';
 import AppBar from '@mui/material/AppBar';
@@ -6,6 +6,7 @@ import logoImage from '../../assets/logo.svg';
 import Navigation from "../UI/Navigation";
 import UserNavigation from "../UI/UserNavigation";
 import Logo from "../UI/Logo";
+import {useDispatch, useSelector} from "react-redux";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
@@ -31,7 +32,6 @@ const Header = ({ isLoggedIn }) => {
         { label: 'Граматика', href: '/grammar' },
         { label: 'Словниковий запас', href: '/vocabulary' },
         { label: 'Типові помилки', href: '/errors' },
-        { label: 'Блог', href: '/blog' },
     ];
     return (
         <StyledAppBar position="static">

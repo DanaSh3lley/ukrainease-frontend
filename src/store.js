@@ -7,6 +7,7 @@ import singleLessonReducer from "./reducers/SingleLessonReducer";
 import awardReducer from "./reducers/awardReducer";
 import userExperienceReducer from "./reducers/userExperienceReducer";
 import leaderboardReducer from "./reducers/leaderboardReducer";
+import notificationReducer from "./reducers/notificationReducer";
 
 const rootReducer = combineReducers({
     user: userReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     awards: awardReducer,
     userExperience: userExperienceReducer,
     leaderboard: leaderboardReducer,
+    notification: notificationReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

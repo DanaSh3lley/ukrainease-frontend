@@ -10,6 +10,13 @@ const QuestionText = styled(Typography)(({theme}) => ({
     marginBottom: '8px',
 }));
 
+const CorrectAnswer = styled('div')(({theme}) => ({
+    ...theme.typography.body['xxl']['400'],
+    marginBottom: '8px',
+    display: 'flex',
+    justifyContent: 'center'
+}));
+
 const Card = ({question, setAnswer, answer, lessonId}) => {
     const {text} = question;
     const dispatch = useDispatch();
@@ -36,7 +43,7 @@ const Card = ({question, setAnswer, answer, lessonId}) => {
                     Wrong
                 </CustomButton>
             </Box>}
-            {showAnswer && <span>{correctAnswer}</span>}
+            {showAnswer && <CorrectAnswer>{correctAnswer}</CorrectAnswer>}
         </Grid>
     );
 };

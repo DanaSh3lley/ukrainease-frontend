@@ -181,7 +181,7 @@ const Profile = () => {
                         > <img
                             src={fire}
                             width={'60px'} height={'60px'}
-                        />
+                         alt={'fire icon'}/>
                             <LeagueName variant="body1">{user.streak}</LeagueName>
                             <Typography variant="body1">днів безперервного навчання</Typography>
                         </Grid>
