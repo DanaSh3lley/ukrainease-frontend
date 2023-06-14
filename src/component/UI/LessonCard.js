@@ -1,29 +1,37 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
-import {styled} from "@mui/system";
-import {Button, Card} from "@mui/material";
-import {ArrowRight} from "phosphor-react";
+import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {styled} from '@mui/system';
+import {Alert, Button, Card, Snackbar} from '@mui/material';
+import {ArrowRight} from 'phosphor-react';
+import {startLesson} from '../../actions/SingleLessonActions';
+import {useNavigate} from "react-router-dom";
+import config from "../../config";
+const imagesPath = `${config[process.env.NODE_ENV].images}`
+
 
 const LessonCardWrapper = styled(Card)(({theme}) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: '100%',
-    marginBottom: theme.spacing(2),
+    display: 'grid',
+    overflow: 'hidden',
+    gridAutoRows: '1fr',
+    gridColumnGap: '5px',
+    gridRowGap: '5px',
+    maxHeight: '350px',
     padding: theme.spacing(3),
-    borderRadius: theme.shape.borderRadius.xl,
+    borderRadius: '16px',
     alignItems: 'flex-start',
-    gap: '20px',
     background: '#FFFFFF',
-    boxShadow:'none'
+    boxShadow: 'none',
 }));
 
 const LessonCardHeader = styled('div')(({theme}) => ({
     display: 'flex',
     alignItems: 'center',
-    marginBottom: theme.spacing(2),
+    flexDirection: 'column',
 
     '& img': {
+        height: '64px',
+        width: '64px',
+        background: 'lightblue',
         marginRight: theme.spacing(1),
     },
 }));
@@ -35,6 +43,7 @@ const LessonCardBody = styled('div')(({theme}) => ({
 const LessonTags = styled('div')(({theme}) => ({
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'flex-start',
     gap: theme.spacing(1),
 
@@ -44,7 +53,7 @@ const LessonTags = styled('div')(({theme}) => ({
         display: 'flex',
         background: theme.palette.secondary[50],
         borderRadius: '100px',
-    }
+    },
 }));
 
 const Tag = styled('span')(({theme}) => ({
@@ -58,10 +67,15 @@ const LessonCardFooter = styled('div')(({theme}) => ({
 
 const Title = styled('h3')(({theme}) => ({
     ...theme.typography.subheading['01'],
+    marginTop: '8px',
+    marginBottom: '8px'
 }));
 
 const Description = styled('p')(({theme}) => ({
     ...theme.typography.body['small-300'],
+    maxHeight: '60px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
 }));
 
 const LessonCardButton = styled(Button)(({theme}) => ({
@@ -70,20 +84,28 @@ const LessonCardButton = styled(Button)(({theme}) => ({
     },
 }));
 
-
 const LessonCard = ({lesson}) => {
     const user = useSelector((state) => state.user.user);
     const {name, icon, description, price, level, requiredLevel, tags, progress, category, opened} = lesson;
+    const dispatch = useDispatch();
 
     const available = user.level >= requiredLevel;
-    const handleStartLesson = () => {
-        // Handle start lesson button click
+
+    const navigate = useNavigate()
+
+    const handleStartLesson = (e) => {
+        e.preventDefault();
+        if (!opened) {
+            dispatch(startLesson(lesson._id))
+        }
+        navigate('/lesson/' + lesson._id)
     };
+
 
     return (
         <LessonCardWrapper>
             <LessonCardHeader>
-                <img src={icon} alt="Lesson Icon"/>
+                <img src={`${imagesPath}/lessons/${icon}`} alt="Lesson Icon"/>
                 <Title>{name}</Title>
             </LessonCardHeader>
             <LessonCardBody>
@@ -103,12 +125,8 @@ const LessonCard = ({lesson}) => {
             </div>
             <LessonCardFooter>
                 {available ? (
-                    <LessonCardButton
-                        onClick={handleStartLesson}
-                        variant="text"
-                        color="primary"
-                        endIcon={<ArrowRight/>}
-                    >
+                    <LessonCardButton onClick={handleStartLesson} variant="text" color="primary"
+                                      endIcon={<ArrowRight/>}>
                         {opened ? 'Learn' : 'Start'}
                     </LessonCardButton>
                 ) : (
@@ -118,6 +136,5 @@ const LessonCard = ({lesson}) => {
         </LessonCardWrapper>
     );
 };
-
 
 export default LessonCard;

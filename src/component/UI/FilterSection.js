@@ -5,7 +5,7 @@ import {styled} from "@mui/system";
 const FilterSectionWrapper = styled('div')(({ theme }) => ({
     backgroundColor: 'white',
     borderRadius: 16,
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
     display: 'flex',
     flexDirection: 'column',
     alignItems:'flex-start',

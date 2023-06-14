@@ -258,7 +258,7 @@ const theme = createTheme({
                 "lineHeight": '20.4px',
                 "paragraphIndent": 0,
                 "paragraphSpacing": 0,
-                "textTransform": "capitalize"
+                "textTransform": "none"
             }, "small": {
                 "fontSize": '14px',
                 "textDecoration": "none",
@@ -270,7 +270,7 @@ const theme = createTheme({
                 "lineHeight": '16.8px',
                 "paragraphIndent": 0,
                 "paragraphSpacing": 0,
-                "textTransform": "capitalize"
+                "textTransform": "none"
             },
         }, "caption": {
             "01": {
@@ -339,7 +339,7 @@ const theme = createTheme({
                     "paragraphSpacing": 0,
                     "textTransform": "none"
                 },
-            }, "xtra large": {
+            }, "xtraLarge": {
                 "300": {
                     "fontSize": '20px',
                     "textDecoration": "none",
@@ -482,9 +482,9 @@ const theme = createTheme({
             }
         }
     }, shape: {
-        borderRadius: {
-            xs: 0, sm: 2, md: 4, lg: 8, xl: 16, xxl: 24, xxxl: 32,
-        },
+        borderRadius: [
+            [0, 2, 4, 8, 16, 24, 32],
+        ],
     }, overrides: {
         MuiCssBaseline: {
             '@global': {

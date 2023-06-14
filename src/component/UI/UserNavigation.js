@@ -25,7 +25,7 @@ const UserNavigation = ({ isLoggedIn }) => {
                 </LinkButton>
             ) : (
                 <>
-                    <LinkButton component="a" href="/signin">
+                    <LinkButton component="a" href="/login">
                         Вхід
                         <IconWrapper>
                             <SignIn size={24} />
