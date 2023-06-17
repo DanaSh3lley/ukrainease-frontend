@@ -31,7 +31,7 @@ const Header = ({ isLoggedIn }) => {
     const navigationLinks = [
         { label: 'Граматика', href: '/grammar' },
         { label: 'Словниковий запас', href: '/vocabulary' },
-        { label: 'Типові помилки', href: '/errors' },
+        { label: 'Типові помилки', href: '/typicalError' },
     ];
     return (
         <StyledAppBar position="static">

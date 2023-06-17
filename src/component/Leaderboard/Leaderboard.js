@@ -119,8 +119,10 @@ const Leaderboard = () => {
         dispatch(getLeaderboard());
     }, [dispatch]);
 
-    return (
-        <LeaderboardWrapper>
+    return isLoading ? (
+                    <Loading />
+                ) :
+       ( <LeaderboardWrapper>
             <LeaderboardTitle>Leaderboard</LeaderboardTitle>
             <LeaderboardHeader>
                 <Grid>
@@ -128,7 +130,7 @@ const Leaderboard = () => {
                 </Grid>
                 <Grid sx={{ flexDirection: 'column' }}>
                     <Description>Наразі ви знаходитесь в {league?.name} Ви досягаєте великих успіхів у вивченні української мови. Продовжуйте працювати та зосереджуйтеся на досягненні своїх цілей. Випробуйте себе, щоб досягти наступного рівня та заробити ще більше балів!</Description>
-                    <Grid>
+                    <Grid sx={{alignItems: 'center', display: 'flex', justifyContent: 'center', gap: '12px'}}>
                         {league && <LeaderboardLeagueIcon src={`${imagesPath}/leagues/${league?.icon}`} alt="League Icon" />}
                         <ArrowFatRight weight="duotone" size={60} style={{ color: '#0F9918' }} />
                         {nextLeague && <LeaderboardLeagueIcon src={`${imagesPath}/leagues/${nextLeague?.icon}`} alt="Next League Icon" />}

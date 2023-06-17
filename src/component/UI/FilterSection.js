@@ -76,7 +76,7 @@ const FilterSection = ({
                 value={levelFilter}
                 onChange={handleLevelFilterChange}
             >
-                <FilterLabel>Level</FilterLabel>
+                <FilterLabel>Рівень</FilterLabel>
                 {['1', '2', '3'].map((level) => (
                     <FormControlLabel
                         key={level}
@@ -87,7 +87,7 @@ const FilterSection = ({
                 ))}
             </FilterRadioGroup>
             <FilterFormControl>
-                <FilterLabel>Category Filter</FilterLabel>
+                <FilterLabel>Категорія</FilterLabel>
                 {categories.map((category) => (
                     <FormControlLabel
                         key={category}
@@ -103,7 +103,7 @@ const FilterSection = ({
                 ))}
             </FilterFormControl>
             <FilterFormControl>
-                <FilterLabel>Type Filter</FilterLabel>
+                <FilterLabel>Тип</FilterLabel>
                 {tags.map((tag) => (
                     <FormControlLabel
                         key={tag}
@@ -119,7 +119,7 @@ const FilterSection = ({
                 ))}
             </FilterFormControl>
             <Button variant="contained" color="primary" onClick={handleApplyFilters}>
-                Apply Filters
+                Застосувати фільтри
             </Button>
         </FilterSectionWrapper>
     );

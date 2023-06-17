@@ -120,17 +120,17 @@ const LessonCard = ({lesson}) => {
                 </LessonTags>
             </LessonCardBody>
             <div>
-                {!opened && <span className="price">Ціна: {price}</span>}
-                {!available && <span className="requiredLevel">Необхідний рівень: {requiredLevel}</span>}
+                {!opened && <div className="price">Ціна: {price}</div>}
+                {!available && <div className="requiredLevel">Необхідний рівень: {requiredLevel}</div>}
             </div>
             <LessonCardFooter>
                 {available ? (
                     <LessonCardButton onClick={handleStartLesson} variant="text" color="primary"
                                       endIcon={<ArrowRight/>}>
-                        {opened ? 'Learn' : 'Start'}
+                        {opened ? 'Вчити' : 'Розпочати'}
                     </LessonCardButton>
                 ) : (
-                    <Button disabled>Unavailable</Button>
+                    <Button disabled>Недоступно</Button>
                 )}
             </LessonCardFooter>
         </LessonCardWrapper>

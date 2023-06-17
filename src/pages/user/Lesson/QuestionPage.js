@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
-import {getLesson, submitAnswer, takeLesson} from "../../../actions/singleLessonActions";
+import {submitAnswer, takeLesson} from "../../../actions/singleLessonActions";
 import CustomStepper from "../../../component/UI/CustomStepper";
 import Container from "@mui/material/Container";
 import {styled} from "@mui/system";
-import {Typography} from "@mui/material";
+import {Popover, Typography} from "@mui/material";
 import Loading from "../../../component/UI/Loading";
 import CustomButton from "../../../component/UI/CustomButton";
 import Question from "../../../component/Lesson/Question";
@@ -42,7 +42,8 @@ const QuestionPage = () => {
         lessonProgress,
         currentQuestion,
         isLoading,
-        takeQuestionIsLoading
+        takeQuestionIsLoading,
+        error
     } = useSelector((state) => state.lesson);
     const [userAnswer, setUserAnswer] = useState("");
 
@@ -52,6 +53,19 @@ const QuestionPage = () => {
     const handleNextStep = async () => {
         await dispatch(submitAnswer({lessonId, userAnswer}));
     };
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
 
     if (isLoading || takeQuestionIsLoading) {
         return <Loading/>;
@@ -82,6 +96,32 @@ const QuestionPage = () => {
                 >
                     Далі
                 </CustomButton>
+                <CustomButton
+                    sx={{marginTop: "16px"}}
+                    variant="ghoast"
+                    color="primary"
+                    href={`/theory/${lessonId}`}
+                >
+                    Назад до теорії
+                </CustomButton>
+                <CustomButton  sx={{marginTop: "16px"}}
+                               variant="ghoast"
+                               color="primary"
+                               aria-describedby={id} onClick={handleClick}>
+                    Підказка
+                </CustomButton>
+                <Popover
+                    id={id}
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                >
+                    <div style={{padding:'12px'}}>{currentQuestion?.hint}</div>
+                </Popover>
             </Container>
             <CustomStepper activeStep={2}/>
         </RootContainer>

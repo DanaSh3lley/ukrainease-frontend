@@ -9,6 +9,7 @@ import {styled} from "@mui/system";
 import {Check, X} from "phosphor-react";
 import CustomButton from "../../../component/UI/CustomButton";
 import CustomStepper from "../../../component/UI/CustomStepper";
+import Loading from "../../../component/UI/Loading";
 
 const RootContainer = styled(Container)({
     margin: '0 auto',
@@ -53,7 +54,7 @@ const FinishPage = () => {
     const dispatch = useDispatch();
     const {id: lessonId} = useParams();
     const navigate = useNavigate();
-    const {lessonResult, lesson} = useSelector((state) => state.lesson);
+    const {lessonResult, lesson, isLoading} = useSelector((state) => state.lesson);
     const [selectedQuestion, setSelectedQuestion] = useState(null);
 
     const handleQuestionClick = (question) => {
@@ -71,6 +72,11 @@ const FinishPage = () => {
     useEffect(() => {
         dispatch(finishLesson(lessonId));
     }, [dispatch, lessonId]);
+
+    if (isLoading) {
+        return <Loading/>;
+    }
+
 
     return (
         <RootContainer maxWidth={'xl'}>
